@@ -1,0 +1,12 @@
+<%- include("partials/header") %>
+
+<div class="ui main text container">
+    <h1><%= tutorial.title %></h1>
+    <div class="ui segment">
+        <img class="ui image big centered rounded" src="<%= tutorial.image %>" alt="">
+        <p><%= tutorial.colors %></p>
+        <a class="ui blue basic button" href="<%= tutorial.video %>"><i class="play icon"></i> Watch Video</a>
+    </div>
+</div>
+
+<%- include("partials/footer") %>

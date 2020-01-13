@@ -18,7 +18,7 @@ var tutorialSchema = new mongoose.Schema({
     title: String,
     image: String,
     videoID: String,
-    videoLink: String,
+    video: String,
     colors: String
 })
 
@@ -68,7 +68,15 @@ app.post("/tutorials", function(req, res) {
 })
 
 // SHOW ROUTE
-
+app.get("/tutorials/:id", function(req, res) {
+    Tutorial.findById(req.params.id, function(err, foundTutorial) {
+        if(err) {
+            res.redirect("/tutorials");
+        } else {
+            res.render("show", {tutorial: foundTutorial});
+        };
+    });
+});
 
 // EDIT ROUTE
 

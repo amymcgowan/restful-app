@@ -11,7 +11,9 @@
     <div class="ui grid container">
         <% tutorials.forEach(function(tutorial) { %>
         <div class="eight wide centered column">
-            <img class="ui big rounded image" src="<%= tutorial.image %>" alt="">
+            <a href="/tutorials/<%= tutorial._id %>">
+                <img class="ui big rounded image" src="<%= tutorial.image %>" alt="">
+            </a>
         </div>
         <% }) %>
     </div>
