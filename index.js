@@ -52,7 +52,9 @@ app.get("/tutorials", function(req, res) {
 });
 
 // NEW ROUTE
-
+app.get("/tutorials/new", function(req, res) {
+    res.render("new");
+})
 
 // CREATE ROUTE
 
