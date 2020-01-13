@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.item {
+    flex-basis: 25%;
+    min-height: 200px;
+    margin: 20px auto;
+    border: 2px solid gray;
+    justify-content: space-between;
+
+}
+
+.item-title {
+    text-align: center;
+}
+
+.item-image {
+    max-width: 100%;
+}

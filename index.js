@@ -28,9 +28,9 @@ var Tutorial = mongoose.model("Tutorial", tutorialSchema);
 
 // Tutorial.create({
 //     title: "Rustic Doorway",
-//     image: "https://img.youtube.com/vi/W9Pir8sgaA/maxresdefault.jpg",
-//     videoID: "W9Pir8sgaA",
-//     videoLink: "https://www.youtube.com/watch?v=W9Pir8sgaA",
+//     image: "https://img.youtube.com/vi/_W9Pir8sgaA/maxresdefault.jpg",
+//     videoID: "_W9Pir8sgaA",
+//     videoLink: "https://www.youtube.com/watch?v=_W9Pir8sgaA",
 //     colors: "Dandelion Yellow, Fuschia, Azure Blue"
 // })
 
