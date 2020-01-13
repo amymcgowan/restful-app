@@ -1,0 +1,19 @@
+{
+  "name": "my-restful-app",
+  "version": "1.0.0",
+  "description": "After learning about RESTful routes, this is my attempt to put together an app following that pattern on my own.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amymcgowan/restful-app.git"
+  },
+  "author": "Amy McGowan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amymcgowan/restful-app/issues"
+  },
+  "homepage": "https://github.com/amymcgowan/restful-app#readme"
+}
