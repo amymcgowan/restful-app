@@ -1,29 +1,32 @@
 <%- include("partials/header") %>
 
-<h1>Add New Tutorial</h1>
+<div class="ui main text container">
+    <h1>Add New Tutorial</h1>
+    
+    <form class="ui form segment" action="/tutorials" method="POST">
+        <div class="field">
+            <label>Title</label>
+            <input type="text" name="tutorial[title]">
+        </div>
+        <div class="field">
+            <label>Video ID</label>
+            <input type="text" name="tutorial[videoID]">
+        </div>
+        <div class="field">
+            <label>Image Link</label>
+            <input type="text" name="tutorial[image]">
+        </div>
+        <div class="field">
+            <label>Video Link</label>
+            <input type="text" name="tutorial[video]">
+        </div>
+        <div class="field">
+            <label>Colors/Materials</label>
+            <textarea name="tutorial[colors]" cols="30" rows="5"></textarea>
+        </div>
+        <button class="ui blue basic button" type="submit">Submit</button>
+    </form>
+</div>
 
-<form action="/tutorials" method="POST">
-    <div class="form-group">
-        <label">Title</label>
-        <input type="text" name="tutorial[title]">
-    </div>
-    <div class="form-group">
-        <label>Video ID</label>
-        <input type="text" name="tutorial[videoID]">
-    </div>
-    <div class="form-group">
-        <label>Image Link</label>
-        <input type="text" name="tutorial[image]">
-    </div>
-    <div class="form-group">
-        <label>Video Link</label>
-        <input type="text" name="tutorial[video]">
-    </div>
-    <div class="form-group">
-        <label>Colors/Materials</label>
-        <textarea name="tutorial[colors]" cols="30" rows="5"></textarea>
-    </div>
-    <button type="submit">Submit</button>
-</form>
 
 <%- include("partials/footer") %>
