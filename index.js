@@ -34,3 +34,22 @@ var Tutorial = mongoose.model("Tutorial", tutorialSchema);
 //     colors: "Dandelion Yellow, Fuschia, Azure Blue"
 // })
 
+// ROUTES
+
+app.get("/", function(req, res) {
+    res.redirect("tutorials");
+})
+
+// INDEX ROUTE
+app.get("/tutorials", function(req, res) {
+    Tutorial.find({}, function(err, tutorials) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.render("index", {tutorials: tutorials});
+        }
+    });
+});
+
+
+app.listen(3000);
