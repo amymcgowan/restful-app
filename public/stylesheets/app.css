@@ -9,7 +9,7 @@
     margin: 20px auto;
     border: 2px solid gray;
     justify-content: space-between;
-
+    padding: 0 10px;
 }
 
 .item-title {

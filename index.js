@@ -51,5 +51,23 @@ app.get("/tutorials", function(req, res) {
     });
 });
 
+// NEW ROUTE
+
+
+// CREATE ROUTE
+
+
+// SHOW ROUTE
+
+
+// EDIT ROUTE
+
+
+// UPDATE ROUTE
+
+
+// DESTROY ROUTE
+
+
 
 app.listen(3000);
