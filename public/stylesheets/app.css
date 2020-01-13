@@ -1,21 +1,7 @@
-.tutorial-container {
-    display: flex;
-    flex-flow: row wrap;
+.container.main {
+    margin-top: 7.0em;
 }
 
-.item {
-    flex-basis: 25%;
-    min-height: 200px;
-    margin: 20px auto;
-    border: 2px solid gray;
-    justify-content: space-between;
-    padding: 0 10px;
-}
-
-.item-title {
+h1 {
     text-align: center;
-}
-
-.item-image {
-    max-width: 100%;
 }

@@ -1,20 +1,22 @@
 <%- include("partials/header") %>
 
-<h1>Tutorial Therapy</h1>
-<p>Art is a wonderful stress relief.  But sometimes, at the end of the day,
-    the mind is too tired to jump into creativity.  But give me a tutorial to 
-    follow and all is well.  I just love some guidance in creating something 
-    beautiful to ease my mind.  Here are some good ones from which to choose.
-</p>
-
-<div class="tutorial-container">
-    <% tutorials.forEach(function(tutorial) { %>
-    <div class="item">
-        <h3 class="item-title"><%= tutorial.title %></h3>
-        <img class="item-image" src="<%= tutorial.image %>" alt="">
+<div class="ui main text container">
+    <h1>Tutorial Therapy</h1>
+    <p>Art is a wonderful stress relief. But sometimes, at the end of the day,
+        the mind is too tired to jump into creativity. But give me a tutorial to
+        follow and all is well. I just love some guidance in creating something
+        beautiful to ease my mind. Here are some good ones from which to choose.
+    </p>
+    
+    <div class="ui grid container">
+        <% tutorials.forEach(function(tutorial) { %>
+        <div class="eight wide centered column">
+            <img class="ui big rounded image" src="<%= tutorial.image %>" alt="">
+        </div>
+        <% }) %>
     </div>
-    <% }) %>
 </div>
+
 
 
 <%- include("partials/footer") %>

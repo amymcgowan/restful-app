@@ -57,7 +57,15 @@ app.get("/tutorials/new", function(req, res) {
 })
 
 // CREATE ROUTE
-
+app.post("/tutorials", function(req, res) {
+    Tutorial.create(req.body.tutorial, function(err, newTutorial) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.redirect("/tutorials");
+        }
+    });
+})
 
 // SHOW ROUTE
 
