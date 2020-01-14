@@ -3,9 +3,9 @@
 <div class="ui main text container">
     <h1><%= tutorial.title %></h1>
     <div class="ui segment">
-        <img class="ui image big centered rounded" src="<%= tutorial.image %>" alt="">
+        <img class="ui image big centered rounded" src="https://img.youtube.com/vi/<%= tutorial.videoID %>/maxresdefault.jpg" alt="">
         <p><%= tutorial.colors %></p>
-        <a class="ui blue basic button" href="<%= tutorial.video %>"><i class="play icon"></i> Watch Video</a>
+        <a class="ui blue basic button" href="https://www.youtube.com/watch?v=<%= tutorial.videoID %>"><i class="play icon"></i> Watch Video</a>
         <a class="ui green basic button" href="/tutorials/<%= tutorial._id %>/edit">Edit</a>
         <form id="delete" action="/tutorials/<%= tutorial._id %>?_method=DELETE" method="POST">
             <button class="ui red basic button">Delete</button>

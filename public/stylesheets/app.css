@@ -9,3 +9,7 @@ h1 {
 #delete {
     display: inline;
 }
+
+.tutorial-image {
+    box-shadow: -5px 5px 5px gray;
+}
