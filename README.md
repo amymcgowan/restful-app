@@ -10,3 +10,9 @@ I followed Colt Steele's lesson on RESTful routes in his Web Dev Bootcamp course
 ## Things to come back to
 - Revisit some styling
 - Make it so that can just input video id and then image and video links are auto created
+
+## I LEFT OFF....
+- check edit route
+- make update route
+- method override
+- ck edit template

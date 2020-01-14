@@ -79,10 +79,26 @@ app.get("/tutorials/:id", function(req, res) {
 });
 
 // EDIT ROUTE
-
+app.get("/tutorials/:id/edit", function(req, res) {
+    Tutorial.findById(req.params.id, function(err, foundTutorial) {
+        if(err) {
+            res.redirect("/tutorials");
+        } else {
+            res.render("edit", {tutorial: foundTutorial})
+        };
+    });
+})
 
 // UPDATE ROUTE
-
+app.put("/tutorials/:id", function(req, res) {
+    Tutorial.findByIdAndUpdate(req.params.id, req.body.tutorial, function(err, updatedTutorial) {
+        if(err) {
+            res.redirect("/tutorials");
+        } else {
+            res.redirect("/tutorials/" + req.params.id);
+        }
+    })
+})
 
 // DESTROY ROUTE
 
