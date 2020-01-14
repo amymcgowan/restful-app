@@ -12,7 +12,8 @@ I followed Colt Steele's lesson on RESTful routes in his Web Dev Bootcamp course
 - Make it so that can just input video id and then image and video links are auto created
 
 ## I LEFT OFF....
-- check edit route
-- make update route
-- method override
-- ck edit template
+- check edit route DONE 
+- make update route DONE
+- method override DONE
+- ck edit template DONE
+- figure out mongoose deprecated methods situation

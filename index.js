@@ -102,6 +102,14 @@ app.put("/tutorials/:id", function(req, res) {
 
 // DESTROY ROUTE
 
-
+app.delete("/tutorials/:id", function(req, res) {
+    Tutorial.findByIdAndRemove(req.params.id, function(err) {
+        if(err) {
+            res.redirect("/tutorials/" + req.params.id);
+        } else {
+            res.redirect("/tutorials");
+        }
+    })
+})
 
 app.listen(3000);

@@ -7,6 +7,9 @@
         <p><%= tutorial.colors %></p>
         <a class="ui blue basic button" href="<%= tutorial.video %>"><i class="play icon"></i> Watch Video</a>
         <a class="ui green basic button" href="/tutorials/<%= tutorial._id %>/edit">Edit</a>
+        <form id="delete" action="/tutorials/<%= tutorial._id %>?_method=DELETE" method="POST">
+            <button class="ui red basic button">Delete</button>
+        </form>
     </div>
 </div>
 
