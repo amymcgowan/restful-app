@@ -17,6 +17,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
 // CLOUDINARY CONFIG
+cloudinary.config({
+    cloud_name: process.env.amymcgowan,
+    api_key: process.env.522495214729148,
+    api_secret: process.env.TPE01pL1ECj7z_MXZ3ONkKycRn0
+});
+var storage = cloudinaryStorage({
+    cloudinary: cloudinary,
+    folder: "images",
+    allowedFormats: ["jpg", "png"],
+    transformation: [{width: 500, height: 500, crop: "limit"}]
+});
+var parser = multer({ storage: storage });
 
 // MONGOOSE/MODEL CONFIG
 var tutorialSchema = new mongoose.Schema({
