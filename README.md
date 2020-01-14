@@ -17,7 +17,7 @@ I followed Colt Steele's lesson on RESTful routes in his Web Dev Bootcamp course
 - DONE method override 
 - DONE ck edit template 
 - figure out mongoose deprecated methods situation
-- streamline video id -> populate image/video links
+- ** streamline video id -> populate image/video links
 - make image on show page a link to the video as well
 - make 'watch video' button bigger/different from edit and delete buttons
 - better format show page, esp the p section

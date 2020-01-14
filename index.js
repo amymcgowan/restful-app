@@ -3,9 +3,9 @@ var express             = require("express");
     bodyParser          = require("body-parser");
     mongoose            = require("mongoose");
     methodOverride      = require("method-override");
-    multer              = require("multer");
-    cloudinary          = require("cloudinary");
-    cloudinaryStorage   = require("multer-storage-cloudinary")
+    // multer              = require("multer");
+    // cloudinary          = require("cloudinary");
+    // cloudinaryStorage   = require("multer-storage-cloudinary")
     
 // APP CONFIG
 mongoose.set('useNewUrlParser', true);
@@ -16,19 +16,19 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
-// CLOUDINARY CONFIG
-cloudinary.config({
-    cloud_name: process.env.amymcgowan,
-    api_key: process.env.522495214729148,
-    api_secret: process.env.TPE01pL1ECj7z_MXZ3ONkKycRn0
-});
-var storage = cloudinaryStorage({
-    cloudinary: cloudinary,
-    folder: "images",
-    allowedFormats: ["jpg", "png"],
-    transformation: [{width: 500, height: 500, crop: "limit"}]
-});
-var parser = multer({ storage: storage });
+// // CLOUDINARY CONFIG
+// cloudinary.config({
+//     cloud_name: process.env.amymcgowan,
+//     api_key: process.env.522495214729148,
+//     api_secret: process.env.TPE01pL1ECj7z_MXZ3ONkKycRn0
+// });
+// var storage = cloudinaryStorage({
+//     cloudinary: cloudinary,
+//     folder: "images",
+//     allowedFormats: ["jpg", "png"],
+//     transformation: [{width: 500, height: 500, crop: "limit"}]
+// });
+// var parser = multer({ storage: storage });
 
 // MONGOOSE/MODEL CONFIG
 var tutorialSchema = new mongoose.Schema({
@@ -51,11 +51,11 @@ var Tutorial = mongoose.model("Tutorial", tutorialSchema);
 //     colors: "Dandelion Yellow, Fuschia, Azure Blue"
 // })
 
-var finishedPieceSchema = new mongoose.Schema({
-    image: String
-})
+// var finishedPieceSchema = new mongoose.Schema({
+//     image: String
+// })
 
-var FinishedPiece = mongoose.model("finishedPiece", finishedPieceSchema);
+// var FinishedPiece = mongoose.model("finishedPiece", finishedPieceSchema);
 
 // CREATE SAMPLE DATA
 
@@ -80,15 +80,15 @@ app.get("/tutorials", function(req, res) {
     });
 });
 
-app.get("/gallery", function(req, res) {
-    FinishedPiece.find({}, function(err, finishedPieces) {
-        if(err) {
-            console.log(err);
-        } else {
-            res.render("gallery", {finishedPieces: finishedPieces});
-        }
-    })
-})
+// app.get("/gallery", function(req, res) {
+//     FinishedPiece.find({}, function(err, finishedPieces) {
+//         if(err) {
+//             console.log(err);
+//         } else {
+//             res.render("gallery", {finishedPieces: finishedPieces});
+//         }
+//     })
+// })
 
 // NEW ROUTE
 app.get("/tutorials/new", function(req, res) {
@@ -110,15 +110,19 @@ app.post("/tutorials", function(req, res) {
     });
 })
 
-app.post("/gallery", function(req, res) {
-    FinishedPiece.create(req.body.finishedPiece, function(err, newPiece) {
-        if(err) {
-            console.log(err);
-        } else {
-            res.redirect("/gallery");
-        }
-    })
-})
+// app.post("/gallery", parser.single("finishedPiece"), function(req, res) {
+//     console.log(req.file);
+//     var finishedPiece = {};
+//     finishedPiece.url = req.file.url;
+//     finishedPiece.id = req.file.public_id;
+//     FinishedPiece.create(finishedPiece, function(err, newPiece) {
+//         if(err) {
+//             console.log(err);
+//         } else {
+//             res.redirect("/gallery");
+//         }
+//     })
+// })
 
 // SHOW ROUTE
 app.get("/tutorials/:id", function(req, res) {
