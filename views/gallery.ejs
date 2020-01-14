@@ -1,0 +1,16 @@
+<%- include("partials/header") %>
+
+<div class="ui main text container">
+    <h1>Gallery</h1>
+    <p>completed pieces</p>
+
+    <div class="ui grid container">
+        <% finishedPieces.forEach(function(piece) { %>
+        <div class="eight wide centered column">
+            <img class="ui big rounded image" src="<%= piece.image %>" alt="">
+        </div>
+        <% }) %>
+    </div>
+</div>
+
+<%- include("partials/footer") %>

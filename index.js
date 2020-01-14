@@ -3,6 +3,9 @@ var express             = require("express");
     bodyParser          = require("body-parser");
     mongoose            = require("mongoose");
     methodOverride      = require("method-override");
+    multer              = require("multer");
+    cloudinary          = require("cloudinary");
+    cloudinaryStorage   = require("multer-storage-cloudinary")
     
 // APP CONFIG
 mongoose.set('useNewUrlParser', true);
@@ -12,6 +15,8 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+
+// CLOUDINARY CONFIG
 
 // MONGOOSE/MODEL CONFIG
 var tutorialSchema = new mongoose.Schema({
@@ -34,6 +39,18 @@ var Tutorial = mongoose.model("Tutorial", tutorialSchema);
 //     colors: "Dandelion Yellow, Fuschia, Azure Blue"
 // })
 
+var finishedPieceSchema = new mongoose.Schema({
+    image: String
+})
+
+var FinishedPiece = mongoose.model("finishedPiece", finishedPieceSchema);
+
+// CREATE SAMPLE DATA
+
+// FinishedPiece.create({
+//     image: "https://cdn.shopify.com/s/files/1/2398/2457/products/seaturtle_740x.jpg?v=1556050030"
+// })
+
 // ROUTES
 
 app.get("/", function(req, res) {
@@ -51,10 +68,24 @@ app.get("/tutorials", function(req, res) {
     });
 });
 
+app.get("/gallery", function(req, res) {
+    FinishedPiece.find({}, function(err, finishedPieces) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.render("gallery", {finishedPieces: finishedPieces});
+        }
+    })
+})
+
 // NEW ROUTE
 app.get("/tutorials/new", function(req, res) {
     res.render("new");
 })
+
+// app.get("/gallery/new", function(req, res) {
+//     res.send("")
+// })
 
 // CREATE ROUTE
 app.post("/tutorials", function(req, res) {
@@ -65,6 +96,16 @@ app.post("/tutorials", function(req, res) {
             res.redirect("/tutorials");
         }
     });
+})
+
+app.post("/gallery", function(req, res) {
+    FinishedPiece.create(req.body.finishedPiece, function(err, newPiece) {
+        if(err) {
+            console.log(err);
+        } else {
+            res.redirect("/gallery");
+        }
+    })
 })
 
 // SHOW ROUTE

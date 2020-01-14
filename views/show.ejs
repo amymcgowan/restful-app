@@ -10,6 +10,13 @@
         <form id="delete" action="/tutorials/<%= tutorial._id %>?_method=DELETE" method="POST">
             <button class="ui red basic button">Delete</button>
         </form>
+        <form class="ui form" action="/gallery" method="POST" enctype="multipart/form-data">
+            <div class="field">
+                <label for="finishedPieceFile">Upload Image of Finished Piece</label>
+                <input type="file" id="finishedPieceFile" name="finishedPiece" accept="image/png, image/jpeg, image,jpg">
+            </div>
+            <button class="ui orange basic button">Submit</button>
+        </form>
     </div>
 </div>
 
