@@ -17,3 +17,4 @@ I followed Colt Steele's lesson on RESTful routes in his Web Dev Bootcamp course
 - method override DONE
 - ck edit template DONE
 - figure out mongoose deprecated methods situation
+- streamline video id -> populate image/video links
