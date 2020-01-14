@@ -18,3 +18,7 @@ I followed Colt Steele's lesson on RESTful routes in his Web Dev Bootcamp course
 - ck edit template DONE
 - figure out mongoose deprecated methods situation
 - streamline video id -> populate image/video links
+- make image on show page a link to the video as well
+- make 'watch video' button bigger/different from edit and delete buttons
+- better format show page, esp the p section
+- format tutorials page so that images have box shadow
