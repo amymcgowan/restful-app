@@ -19,7 +19,10 @@ I followed Colt Steele's lesson on RESTful routes in his Web Dev Bootcamp course
 - figure out mongoose deprecated methods situation
 - DONE streamline video id -> populate image/video links
 - make image on show page a link to the video as well
-- make 'watch video' button bigger/different from edit and delete buttons
-- better format show page, esp the p section
+- DONE make 'watch video' button bigger/different from edit and delete buttons
+- DONE better format show page, esp the p section
 - DONE format tutorials page so that images have box shadow
 - improve responsiveness, esp on tutorials page
+- figure out how to upload files
+    - https://medium.com/@Ugbechike/uploading-image-to-cloudinary-using-node-js-bbadd76ed0b4
+    - http://programmerblog.net/nodejs-file-upload-tutorial/

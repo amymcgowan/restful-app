@@ -4,12 +4,25 @@
     <h1><%= tutorial.title %></h1>
     <div class="ui segment">
         <img class="ui image big centered rounded" src="https://img.youtube.com/vi/<%= tutorial.videoID %>/maxresdefault.jpg" alt="">
-        <p><%= tutorial.colors %></p>
-        <a class="ui blue basic button" href="https://www.youtube.com/watch?v=<%= tutorial.videoID %>"><i class="play icon"></i> Watch Video</a>
-        <a class="ui green basic button" href="/tutorials/<%= tutorial._id %>/edit">Edit</a>
-        <form id="delete" action="/tutorials/<%= tutorial._id %>?_method=DELETE" method="POST">
-            <button class="ui red basic button">Delete</button>
-        </form>
+        <% if(tutorial.colors) { %>
+            <h3>Materials & Colors:</h3>
+            <p id="colors"><%= tutorial.colors %></p>
+        <% } %>
+        <div class="show-buttons">
+            <div id="show-buttons-l">
+                <a id="play-button" class="ui blue basic button" href="https://www.youtube.com/watch?v=<%= tutorial.videoID %>">
+                    <i class="play icon"></i>
+                    Watch Tutorial
+                </a>
+            </div>
+            <div id="show-buttons-r">
+                <a class="ui green basic button" href="/tutorials/<%= tutorial._id %>/edit">Edit</a>
+                <form id="delete" action="/tutorials/<%= tutorial._id %>?_method=DELETE" method="POST">
+                    <button class="ui red basic button">Delete</button>
+                </form>
+            </div>
+        </div>
+        
         <!-- <form class="ui form" action="/gallery" method="POST" enctype="multipart/form-data">
             <div class="field">
                 <label for="finishedPieceFile">Upload Image of Finished Piece</label>

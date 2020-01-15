@@ -2,15 +2,15 @@
 
 <div class="ui main text container">
     <h1>Tutorial Therapy</h1>
-    <p>Art is a wonderful stress relief. But sometimes, at the end of the day,
+    <p id="intro">Art is a wonderful stress relief. But sometimes, at the end of the day,
         my mind is too tired to jump into creativity. But give me a tutorial to
         follow and all is well. I just love some guidance in creating something
-        beautiful to ease my mind. Here are some good ones to choose.
+        beautiful to ease my mind. Here are some good ones that I want to get to.
     </p>
     
-    <div class="ui grid container">
+    <div class="ui three column doubling stackable grid container">
         <% tutorials.forEach(function(tutorial) { %>
-        <div class="eight wide centered column">
+        <div class="column">
             <a href="/tutorials/<%= tutorial._id %>">
                 <img class="ui big rounded image tutorial-image" src="https://img.youtube.com/vi/<%= tutorial.videoID %>/maxresdefault.jpg" alt="">
             </a>
