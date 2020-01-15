@@ -3,7 +3,10 @@
 <div class="ui main text container">
     <h1><%= tutorial.title %></h1>
     <div class="ui segment">
-        <img class="ui image big centered rounded" src="https://img.youtube.com/vi/<%= tutorial.videoID %>/maxresdefault.jpg" alt="">
+        <a href="https://www.youtube.com/watch?v=<%= tutorial.videoID %>">
+        <img class="ui image big centered rounded" src="https://img.youtube.com/vi/<%= tutorial.videoID %>/maxresdefault.jpg"
+            alt="">
+        </a>
         <% if(tutorial.colors) { %>
             <h3>Materials & Colors:</h3>
             <p id="colors"><%= tutorial.colors %></p>
