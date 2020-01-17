@@ -36,3 +36,4 @@ Working on this project has helped me to understand routes, the process, and the
 - figure out how to upload files to create a gallery page
     - https://medium.com/@Ugbechike/uploading-image-to-cloudinary-using-node-js-bbadd76ed0b4
     - http://programmerblog.net/nodejs-file-upload-tutorial/
+- make a filter search so that I can mark which colors I have and it will show me which tutorials use those colors
